@@ -1,0 +1,38 @@
+#nav-list li{
+	display:inline-block;
+	
+   
+	color:#FFFFFF;
+	cursor:pointer;
+	margin-left:3rem;
+}
+#ytuLogo{
+	position:absolute;
+	width:10%;
+	left:0;
+	top:0.5rem;
+	height:auto;
+	animation : logo-spin infinite 10s linear;
+}
+
+#nav-list{
+	display:inline-block ;
+	
+}
+#options-icon {
+  display:none;
+}
+ 
+#options-icon i{
+  display:none;
+}
+
+@keyframes logo-spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+}
+  

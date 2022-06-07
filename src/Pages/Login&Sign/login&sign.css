@@ -1,0 +1,54 @@
+
+#form-card img{
+    width:100%;
+    height:100%;
+    border-radius: 10px 0px 0px 10px;
+    /* animation : logo-spin infinite 10s linear; */
+}
+
+#form-card h2{
+    position :absolute;
+    display:inline-block;
+    font-size:2rem;
+
+    top:25%;
+    text-align:center;
+    letter-spacing:2px;
+    line-height:60px;
+    height:60px;
+    width:180px;
+    margin:0;
+    padding:0;
+    cursor:pointer;
+    /* display:inline;
+    
+    border:1px solid blue;
+    padding:0.3rem 0.8rem;
+    stroke-dasharray: 300px;
+    stroke-dashoffset: 0px; */
+    
+}
+
+#form-card h2 svg,
+#form-card h2 svg rect
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    fill:transparent;
+}
+
+#form-card h2 svg rect{
+    stroke:#AE996E;
+    stroke-width:4;
+    transition:2s;
+    stroke-dasharray:500, 500;
+    
+   
+}
+#form-card h2:hover svg rect{
+    stroke-dashoffset: 500;
+}
+
