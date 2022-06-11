@@ -1,4 +1,4 @@
-import logo from '../../../../ytulogo.svg';
+import logo from '../../../../img/ytulogo.svg';
 import './Navbar.css';
 import { Link } from 'react-router-dom'
 import auth from '../../../../auth/auth';

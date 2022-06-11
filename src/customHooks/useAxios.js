@@ -1,6 +1,38 @@
-import {useState, useEffect} from 'react'
-import axios from 'axios'
-const useAxios = (url = '', method="get", options = null, cb=()=>{}) => {
+
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+require('dotenv').config()
+
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+
+const useAxios = ({ url, method, body = null, headers = null, cb=()=>{} }) => {
+    const [response, setResponse] = useState(null);
+    const [error, setError] = useState('');
+    const [loading, setloading] = useState(true);
+
+    const fetchData = () => {
+        axios[method](url, headers, body)
+            .then((res) => {
+                setResponse(res.data);
+                cb();
+            })
+            .catch((err) => {
+                setError(err);
+            })
+            .finally(() => {
+                setloading(false);
+            });
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, [method, url, body, headers]);
+
+    return { response, error, loading };
+};
+
+export default useAxios;
+/*const useAxios = (url = '', method="get", options = null, cb=()=>{}) => {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -33,7 +65,7 @@ const useAxios = (url = '', method="get", options = null, cb=()=>{}) => {
     return { loading, error, data };
   };
   
-  export default useAxios;
+  export default useAxios;*/
 
 //   const {data} = useAxios('http://localhost:5000/api/auth/login',"post",{
 		  

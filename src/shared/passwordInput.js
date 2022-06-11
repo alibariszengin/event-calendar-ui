@@ -1,5 +1,5 @@
-import EyeIconShow from './eyeIcon-show'
-import EyeIconNotShow from './eyeIcon-notShow'
+import EyeIconShow from './eye-icons/eyeIcon-show'
+import EyeIconNotShow from './eye-icons/eyeIcon-notShow'
 import styles from './loginRegisterInputs.module.css'
 import React, { useState } from 'react'
 const PasswordInput =(props) =>{

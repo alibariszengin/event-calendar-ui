@@ -5,6 +5,7 @@ import Root from "./Routers";
 import reportWebVitals from "./reportWebVitals";
 import store from './store'
 import {Provider} from 'react-redux'
+require('dotenv').config()
 ReactDOM.render(
   <Provider store={store}>
     <Root />

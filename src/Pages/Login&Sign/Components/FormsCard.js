@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import LoginForm from './Login/LoginForm';
 import SignForm from './Sign/SignForm';
-import logo from '../../../sun-clock2.jpg';
+import logo from '../../../img/sun-clock2.jpg';
 function FormsCard(props) {
 
 	const [comp, setShow] = useState("giris");

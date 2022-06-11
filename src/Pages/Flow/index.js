@@ -9,7 +9,7 @@ function Flow(){
 
             <div className="flex flex-col justify-between items-center mt-32 h-full">
                 <div className="bg-white h-full w-1/2 flex justify-center">
-                    <p className="text-2xl">AKIŞ</p>
+                    <p className="text-2xl">Takvim</p>
                 </div>
                
                
