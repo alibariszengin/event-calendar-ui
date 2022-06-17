@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import LoggedInUser from "../../store/action/userAction.js";
-
+import SideBar from "./sideBar.js";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import interactionPlugin from "@fullcalendar/interaction";
@@ -95,15 +95,7 @@ function Dashboard() {
       <Navbar text="Çıkış Yap" to="/login" />
 
       <div className="flex h-5/6  ">
-        <div
-          className="w-1/4 d-block flex justify-center"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(241, 255, 173, 255) 0%, rgba(86, 92, 90, 0) 75%, rgba(241, 255, 118, 0) 75%, rgba(241, 255, 118, 255) 100%)",
-          }}
-        >
-          Ali Barış Zengin
-        </div>
+        <SideBar/>
         <div className="h-full w-3/4">
           <FullCalendar
             height="100%"

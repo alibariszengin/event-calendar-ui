@@ -1,0 +1,13 @@
+#add-event{
+    margin-top:3rem;
+}
+
+#add-event input,
+#add-event p{
+    margin-bottom: 1rem;
+    
+}
+#add-event input{
+    margin-left:1rem;
+    
+}
