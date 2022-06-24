@@ -4,10 +4,12 @@ import "../Form.css";
 import auth from "../../../../auth/auth.js";
 import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
+import Alert from "sweetalert2";
+
 function SignForm(props) {
   const history = useHistory();
   const [show, setShow] = useState("false");
-
+  const [error, setError] = useState(" ");
   const toggleEye = () => {
     setShow(!show);
   };
@@ -17,6 +19,7 @@ function SignForm(props) {
     const name = inputs.item(0).value;
     const mail = inputs.item(1).value;
     const password = inputs.item(2).value;
+
     console.log(inputs);
     await axios
       .post("http://localhost:5000/api/auth/register", {
@@ -33,18 +36,27 @@ function SignForm(props) {
             history.replace("/");
           });
         },
-        (error) => {
-          console.log(error.message);
+        (err) => {
+          setError("Check your credentials!")
+          console.log(err.message);
         }
       );
   };
+  const userRights = ()=>{
+          Alert.fire({
+          title: "User Rights",
+          text: "In our application, the user has the rights of share their informations with their approval.",
+          icon: "info",
+        });
+  }
   return (
     <div
       id="signForm"
       className="ml-5 inline-block form"
-      style={{ width: "75%" }}
+      style={{ width: "75%", fontSize:"1rem" }}
+      
     >
-      <div className="mt-5 mx-auto " style={{ width: "75%" }}>
+      <div className="mt-5 mx-auto " style={{ width: "90%" }}>
         <input type="text" placeholder="Ad Soyad"></input>
         <input type="mail" placeholder="E-posta"></input>
         <div className="relative">
@@ -59,13 +71,13 @@ function SignForm(props) {
         </div>
         <p className="mt-2">
           Kullanıcı haklari sözlesmesini{" "}
-          <a href="\#" className="cursor-pointer">
-            buradan
-          </a>{" "}
-          okuyabilirsiniz.
+          <span className="cursor-pointer" onClick={()=>(userRights())}>
+            buradan 
+          </span>
+           {" "}okuyabilirsiniz.
         </p>
       </div>
-
+      <span style={{color:"red"}}>{error}</span>
       <p
         href="/#"
         onClick={handleUserInfo}

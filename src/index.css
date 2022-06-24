@@ -10,7 +10,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y:hidden;
 }
-
+html{
+  font-size:"0.5rem";
+}
 
 
 code {

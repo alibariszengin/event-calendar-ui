@@ -3,10 +3,10 @@ function SideBar() {
   return (
     <div
       className="w-1/4 d-block flex flex-col items-center"
-      style={{
+      /*style={{
         background:
           "linear-gradient(to bottom, rgba(241, 255, 173, 255) 0%, rgba(86, 92, 90, 0) 75%, rgba(241, 255, 118, 0) 75%, rgba(241, 255, 118, 255) 100%)",
-      }}
+      }}*/
     >
       <div>Ali Barış Zengin</div>
 

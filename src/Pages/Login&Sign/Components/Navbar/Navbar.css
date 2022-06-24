@@ -8,8 +8,8 @@
 }
 #ytuLogo{
 	position:absolute;
-	width:10%;
-	left:0;
+	width:5%;
+	left:4rem;
 	top:0.5rem;
 	height:auto;
 	animation : logo-spin infinite 10s linear;

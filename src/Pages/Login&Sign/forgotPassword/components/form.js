@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import styles from '../../../../shared/loginRegisterInputs.module.css'
 import PasswordInput from '../../../../shared/passwordInput'
 import MailInput from '../../../../shared/mailInput'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import SvgComponent from '../img-icon/3dots.js'
 import onayKutusu from '../img-icon/onay.svg'
 import axios from 'axios'
 function ForgotForm(props) {
+  const history = useHistory();
   const  url =  window.location.href;
   const key = url.slice(url.indexOf("resetPasswordToken")+19,url.length)
   const { type } = props
@@ -63,9 +64,12 @@ function ForgotForm(props) {
           console.log(response);
           document.getElementById('animDots').className = 'hidden';
           const onayKutusu = document.getElementById('onayKutusu')
-
+          const delayInMilliseconds = 3000;
           onayKutusu.style.opacity = '1'
           onayKutusu.style.visibility = 'visible'
+          setTimeout(function() {
+            history.push("./login")
+          }, delayInMilliseconds);
         },
         (error) => {
 
@@ -121,7 +125,7 @@ function ForgotForm(props) {
     setValidMail(e)
   }
   return (
-    <div className="h-1/2 ">
+    <div style={{fontSize:"0.8rem"}} className="h-1/2 ">
       <p className="font-semibold leading-6 mb-10">
         {text}
         <br />
@@ -188,7 +192,7 @@ function ForgotForm(props) {
           <span></span>
         </span> */}
       </button>
-      <h1 className="line">YA DA</h1>
+      <h1 style={{fontSize:"1rem"}} className="line">YA DA</h1>
       <Link to="/login">
         <p style={{ marginTop: '1em ' }}>Yeni Hesap Oluştur</p>
       </Link>

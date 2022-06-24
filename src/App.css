@@ -3,7 +3,6 @@
   height: 100vh;
   background: linear-gradient(to bottom, rgba(86, 92, 90, 255) 0%, rgba(86, 92, 90, 0) 75%, rgba(225, 179, 118, 0) 75%, rgba(225, 179, 118, 255) 100%);
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

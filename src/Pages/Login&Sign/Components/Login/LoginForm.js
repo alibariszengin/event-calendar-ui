@@ -6,26 +6,30 @@ import auth from "../../../../auth/auth.js";
 import { useHistory } from "react-router-dom";
 import useEventListener from "../../../../customHooks/useEventListener";
 import useCheckCredantials from "./CheckCredantials";
+
 function LoginForm(props) {
   const history = useHistory();
   const [show, setShow] = useState("false");
   const loginRef = useRef();
+  const [error, setError] = useState(" ");
   function UseAxios(mail, password) {
-    axios.post(`http://localhost:5000/api/auth/login`, {
-      email: mail,
-      password: password,
-    }).then((res) => {
-      Cookies.set("access", res.data.access_token);
-     
-      auth.login(() => {
-        history.replace("/");
-      });
-  })
-  .catch((err) => {
-      console.log(err.message)
-  })
-    
+    axios
+      .post(`http://localhost:5000/api/auth/login`, {
+        email: mail,
+        password: password,
+      })
+      .then((res) => {
+        Cookies.set("access", res.data.access_token);
+
+        auth.login(() => {
+          history.replace("/");
+        });
+      })
+      .catch((err) => {
   
+        setError("Check your credentials!");
+        console.log(err.message);
+      });
   }
   useEventListener(
     "keypress",
@@ -45,9 +49,7 @@ function LoginForm(props) {
     console.log(form);
     const mail = inputs.item(0).value;
     const password = inputs.item(1).value;
-    const data = UseAxios(mail,password)
-
-
+    const data = UseAxios(mail, password);
   };
   return (
     <div
@@ -56,26 +58,28 @@ function LoginForm(props) {
       style={{ width: "75%" }}
     >
       <div
-        className="mt-5 flex flex-col justify-start items-center mx-auto "
-        style={{ width: "75%" }}
+        className="mt-5 mx-auto " style={{ width: "90%" }}
       >
         <input type="mail" placeholder="E-posta"></input>
-        <div className="relative w-full">
+        <div className="relative w-full w-full">
           <input
+       
             type={show === false ? "text" : "password"}
             placeholder="Şifre (en az 6 karakter)"
-          ></input>
-          <i
-            onClick={toggleEye}
-            className={show === false ? "fa fa-eye" : "fa fa-eye-slash"}
-          />
+          ></input><i
+          onClick={toggleEye}
+          style={{position:"absolute"}}
+          className={show === false ? "fa fa-eye" : "fa fa-eye-slash"}
+        />
+          
         </div>
-
-        <a href="/forgot-password" className="self-end mt-2 cursor-pointer">
+      
+        <a href="/forgot-password"  className="inline-block mt-3 cursor-pointer">
           Şifreni mi unuttun?
         </a>
+        
       </div>
-
+      <p style={{color:"red"}}>{error}</p>
       <span
         href="/"
         onClick={HandleUserInfo}

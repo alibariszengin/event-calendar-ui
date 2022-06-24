@@ -6,7 +6,7 @@ function Navbar(props) {
 
 	return (
 
-		<div className="w-3/4 mx-auto h-1/6 flex justify-end pt-4 relative">
+		<div style={props.style} className="w-full px-24 mx-auto h-1/6 flex justify-end pt-4 relative">
 			<img id="ytuLogo" src={logo} alt="ytu logo" />
 
 			<div id="nav-container">
@@ -14,7 +14,7 @@ function Navbar(props) {
 				<ul id="nav-list" className=" p-3 mt-5">
 
 
-					<Link onClick={props.to ? () => { auth.logout(() => { }) } : () => { }} to={props.to || "/"}><li style={{ color: "red" }}>{props.text || ""}</li></Link>
+					<Link onClick={props.to ? () => { auth.logout(() => { }) } : () => { }} to={props.to || "/"}><li style={{ color: "white" }}>{props.text || ""}</li></Link>
 
 				</ul>
 			</div>

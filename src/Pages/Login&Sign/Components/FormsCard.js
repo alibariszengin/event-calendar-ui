@@ -30,12 +30,12 @@ function FormsCard(props) {
 
 
 		<div id="form-card" className="w-3/4 flex flex-row justify-end h-4/5" style={{ minWidth: "50rem", backgroundColor: "#FFFFFF", height: "", color: "rgba(64, 62, 86, 0.6)", borderRadius: "1.8rem" }}>
-			<div className="w-2/3">
+			<div id="login-time-icon" className="w-2/3">
 				<img src={logo} alt="ytu logo" className="" />
 			</div>
 
-			<div className="w-1/2 inline-block flex flex-col items-center justify-start " style={{ padding: "2rem", paddingTop: "5rem", paddingBottom: "1rem" }}>
-				<div className="mb-24 relative ">
+			<div id="container-of-login-form" className="w-1/2 inline-block flex flex-col items-center justify-start " style={{ padding: "2rem", paddingTop: "5rem", paddingBottom: "1rem" }}>
+				<div  className="mb-16 relative ">
 					<h2 onClick={openGiris} style={{ left: "0rem" }}>
 						<svg>
 							<rect id="girisYazi" style={{ strokeDashoffset: "0" }} ></rect>

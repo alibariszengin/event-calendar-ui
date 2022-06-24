@@ -10,6 +10,7 @@ import Navbar from '../Pages/Login&Sign/Components/Navbar/Navbar.js'
 import Flow from '../Pages/Flow'
 import {ProtectedRoute} from '../auth/protected.route.js'
 import ForgotPassword from '../Pages/Login&Sign/forgotPassword'
+import Dash from "../Pages/Dashboard/dash";
 function Root(){
 
     return(
@@ -27,7 +28,7 @@ function Root(){
   
             </Route> 
             <ProtectedRoute  path="/" >
-              <Dashboard/>
+              <Dash/>
             </ProtectedRoute> 
             
             <ProtectedRoute path="/profile">

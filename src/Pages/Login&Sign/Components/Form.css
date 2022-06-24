@@ -27,3 +27,24 @@
 	top:1.7rem;
 	right:1rem;
 }
+@media only screen and (max-width: 1000px) {
+	#login-time-icon {
+		width:50%;
+	  }
+	  #container-of-login-form{
+		  width:50%;	
+	  }
+  }
+@media only screen and (max-width: 820px) {
+	#login-time-icon {
+	  display:none;
+	}
+	#container-of-login-form{
+		width:100%;	
+	}
+	#form-card{
+		padding:0rem 4rem;
+
+	}
+	
+  }
